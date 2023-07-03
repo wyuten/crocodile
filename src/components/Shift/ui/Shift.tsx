@@ -11,7 +11,11 @@ export default function Shift() {
 
   return (
     <>
-      { shifts.map((shift) => <p>{ shift.name }: { shift.value }</p>) }
+      {
+        shifts.map(
+          (shift) => <p key={shift.name}>{ shift.name }: { shift.value }</p>
+        )
+      }
     </>
   )
 }
