@@ -1,4 +1,4 @@
-export type ShiftType = {
+export type DevUIType = {
   name: string,
-  value: string
+  value: string,
 }
