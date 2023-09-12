@@ -1,14 +1,11 @@
 // import { useState, useEffect } from 'react'
+import { type RefWordProps } from '../types/RefWord'
 
-export default function RefWord() {
-
-
-//   useEffect(() => {
-//   }, [])
+export default function RefWord(data: RefWordProps) {
 
   return (
     <div>
-        Рандомное слово
+        { data.word }
     </div>
   )
 }

@@ -1,4 +1,4 @@
-export const words: string[] = [
+export const ListWords: string[] = [
   "Автомобиль",
   "Банан",
   "Книга",

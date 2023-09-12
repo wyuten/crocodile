@@ -1,8 +1,8 @@
-import RefWord from '../components/RefWord/ui/RefWord.js'
+import MainContainer from '../widgets/mainContainer.js'
 
 const main = () => (
   <>
-    <RefWord />
+    <MainContainer />
   </>
 )
 
