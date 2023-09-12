@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { plot, lineY, ruleY } from '@observablehq/plot'
 import { type PlotFigureProps } from '../types/PlotFigure'
+import './PlotFigure.css'
 
 export default function PlotFigure({ dots }: PlotFigureProps) {
   const containerRef = useRef<HTMLInputElement>(null);
@@ -20,6 +21,6 @@ export default function PlotFigure({ dots }: PlotFigureProps) {
   }, [dots]);
 
   return (
-    <div ref={containerRef}></div>
+    <div className={'plot'} ref={containerRef}></div>
   )
 }
