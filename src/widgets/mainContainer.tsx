@@ -5,14 +5,23 @@ import { randomizeWords } from '../features/randomizeWords.js'
 
 
 const useMainContainer = () => {
-    const [data, setData] = useState();
-    // const [counter, updateCounter] = useState();
+    const [data, setData] = useState("");
+    const [count, setCount] = useState(0);
+    const randomizedArray = randomizeWords(ListWords);
+    function updateWord(count: number) {
+      setCount(count++)
+      setData(randomizedArray[count]);
+    }
     useEffect(() => {
-      const fo = randomizeWords(ListWords)
-      setData(fo[0]);
-    }, []);
-
-    return (<RefWord word={data} />)
+      setData(randomizedArray[0]);
+    }, [randomizedArray]);
+    return (
+      <>
+    <RefWord word={data} />
+        {/* это только для теста */}
+        <button onClick={() => updateWord(count)}>next word</button>
+      </>
+    )
   }
 
 export default useMainContainer
