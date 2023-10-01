@@ -15,7 +15,7 @@ export default function Shift() {
   }, [])
 
   useEffect(() => {
-    if (!shifts.length) return;
+    if (!shifts.length) return
     const dots = shifts[0].value.split(',').map((dot, index) => ({ number: index, shift: Number(dot) || 0}))
     setGraphDots(dots)
   }, [shifts])

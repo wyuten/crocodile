@@ -59,11 +59,11 @@ function getDeviceOrientationEventCb(setShifts: DevUITypeArraySetter, setMedian:
 }
 
 function setGyroscopeWatcher(setShifts: DevUITypeArraySetter, setMedian: DevUITypeObjectSetter, setWave: DevUITypeObjectSetter) {
-  const deviceorientationHandler = throttle(
+  const deviceOrientationHandler = throttle(
     getDeviceOrientationEventCb(setShifts, setMedian, setWave),
     eventFrequency, { leading: false, trailing: true }
   )
-  window.addEventListener('deviceorientation', deviceorientationHandler, true)
+  window.addEventListener('deviceorientation', deviceOrientationHandler, true)
   document.addEventListener('keydown', () => {
     isGyroscopeWork = !isGyroscopeWork
   })

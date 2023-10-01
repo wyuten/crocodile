@@ -1,13 +1,13 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react'
 import { plot, lineY, ruleY } from '@observablehq/plot'
 import { type PlotFigureProps } from '../types/PlotFigure'
 import './PlotFigure.css'
 
 export default function PlotFigure({ dots }: PlotFigureProps) {
-  const containerRef = useRef<HTMLInputElement>(null);
+  const containerRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
-    if (!dots) return;
+    if (!dots) return
     const plotInstance = plot({
       y: {domain: [-90, 90]},
       color: {scheme: "burd"},
@@ -15,10 +15,10 @@ export default function PlotFigure({ dots }: PlotFigureProps) {
         ruleY([0]),
         lineY(dots, {x: 'number', y: 'shift'})
       ]
-    });
-    containerRef?.current?.append(plotInstance);
-    return () => plotInstance.remove();
-  }, [dots]);
+    })
+    containerRef?.current?.append(plotInstance)
+    return () => plotInstance.remove()
+  }, [dots])
 
   return (
     <div className={'plot'} ref={containerRef}></div>
